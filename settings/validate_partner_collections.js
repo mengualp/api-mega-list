@@ -42,8 +42,10 @@ check(coreclawUrls.every(url => url.endsWith('?fpr=chris69')), 'Every CoreClaw s
 check(categoryCounts.length === 16, `Expected 16 CoreClaw categories, found ${categoryCounts.length}`);
 check(categoryCounts.reduce((sum, count) => sum + count, 0) === 118, 'CoreClaw category counts must add up to 118');
 check(!coreclawReadme.includes('tokens truncated'), 'CoreClaw collection contains a truncation marker');
-check(mainReadme.includes('(./00-featured-apis/apyhub-utility-apis/)'), 'Main README is missing the ApyHub collection');
-check(mainReadme.includes('(./00-featured-apis/coreclaw-scraper-apis/)'), 'Main README is missing the CoreClaw collection');
+check(mainReadme.includes('href="./00-featured-apis/apyhub-utility-apis/"'), 'Main README is missing the ApyHub collection');
+check(mainReadme.includes('href="./00-featured-apis/coreclaw-scraper-apis/"'), 'Main README is missing the CoreClaw collection');
+check(mainReadme.includes('./assets/featured/apyhub-banner.png'), 'Main README is missing the ApyHub banner');
+check(mainReadme.includes('./assets/featured/coreclaw-banner.png'), 'Main README is missing the CoreClaw banner');
 check(featuredLanding.includes('href="./apyhub-utility-apis/"'), 'Featured APIs page is missing the ApyHub collection');
 check(featuredLanding.includes('href="./coreclaw-scraper-apis/"'), 'Featured APIs page is missing the CoreClaw collection');
 check(featuredLanding.includes('../assets/featured/apyhub-banner.png'), 'Featured APIs page is missing the ApyHub banner');
@@ -52,7 +54,7 @@ check(apyhubReadme.includes('../../assets/featured/apyhub-banner.png'), 'ApyHub 
 check(coreclawReadme.includes('../../assets/featured/coreclaw-banner.png'), 'CoreClaw page is missing its featured banner');
 check(fs.existsSync(path.join(root, 'assets', 'featured', 'apyhub-banner.png')), 'ApyHub banner asset is missing');
 check(fs.existsSync(path.join(root, 'assets', 'featured', 'coreclaw-banner.png')), 'CoreClaw banner asset is missing');
-check(mainReadme.indexOf('ApyHub Utility API Collection') < mainReadme.indexOf('CoreClaw Web, Social & Commerce Scraper APIs'), 'Partner collections must remain alphabetically ordered');
+check(mainReadme.indexOf('ApyHub Utility API Collection') < mainReadme.indexOf('CoreClaw Web, Social &amp; Commerce Scraper APIs'), 'Partner collections must remain alphabetically ordered');
 check(mainReadme.includes('(./SPONSORED_PARTNERS.md)'), 'Main README is missing the sponsored placement policy');
 check(!mainReadme.includes('All links include affiliate tracking'), 'Main README contains the removed affiliate-tracking note');
 check(readmeGenerator.includes("name: 'ApyHub Utility API Collection'"), 'README generator is missing the ApyHub partner collection');
