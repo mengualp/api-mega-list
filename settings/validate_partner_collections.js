@@ -44,8 +44,8 @@ check(categoryCounts.reduce((sum, count) => sum + count, 0) === 118, 'CoreClaw c
 check(!coreclawReadme.includes('tokens truncated'), 'CoreClaw collection contains a truncation marker');
 check(mainReadme.includes('(./00-featured-apis/apyhub-utility-apis/)'), 'Main README is missing the ApyHub collection');
 check(mainReadme.includes('(./00-featured-apis/coreclaw-scraper-apis/)'), 'Main README is missing the CoreClaw collection');
-check(featuredLanding.includes('(./apyhub-utility-apis/)'), 'Featured APIs page is missing the ApyHub collection');
-check(featuredLanding.includes('(./coreclaw-scraper-apis/)'), 'Featured APIs page is missing the CoreClaw collection');
+check(featuredLanding.includes('href="./apyhub-utility-apis/"'), 'Featured APIs page is missing the ApyHub collection');
+check(featuredLanding.includes('href="./coreclaw-scraper-apis/"'), 'Featured APIs page is missing the CoreClaw collection');
 check(featuredLanding.includes('../assets/featured/apyhub-banner.png'), 'Featured APIs page is missing the ApyHub banner');
 check(featuredLanding.includes('../assets/featured/coreclaw-banner.png'), 'Featured APIs page is missing the CoreClaw banner');
 check(apyhubReadme.includes('../../assets/featured/apyhub-banner.png'), 'ApyHub page is missing its featured banner');
