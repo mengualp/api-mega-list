@@ -1,15 +1,17 @@
-# Featured APIs
+# ApyHub Utility API Collection
 
 <p align="right"><a href="../README.md#-table-of-contents">Back to main list</a></p>
 
-**Sponsored partner APIs organized by category**
+> **Sponsored partner collection**
 
-**200 featured APIs in this collection**
+Explore **200 ApyHub utility APIs** for artificial intelligence, file conversion, data extraction, validation, SEO, HR, marketing, and application workflows.
 
-## Featured Categories
+**200 APIs in this sponsored collection**
 
-| Featured category | APIs | Featured category | APIs |
-|-------------------|-----:|-------------------|-----:|
+## API Categories
+
+| Category | APIs | Category | APIs |
+|----------|-----:|----------|-----:|
 | [Artificial Intelligence](#artificial-intelligence)<br><sub>AI, NLP, media intelligence</sub> | **77** | [Data Extraction](#data-extraction)<br><sub>Text, documents, web data</sub> | **49** |
 | [File Conversion](#file-conversion)<br><sub>Documents, images, audio, video</sub> | **41** | [Smart Generation](#smart-generation)<br><sub>Content and asset generation</sub> | **24** |
 | [Data Validation](#data-validation)<br><sub>Email, finance, files, websites</sub> | **18** | [File Manipulation](#file-manipulation)<br><sub>Resize, compress, edit, extract</sub> | **16** |

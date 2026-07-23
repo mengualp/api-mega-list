@@ -1,0 +1,51 @@
+name: Validate partner collections
+
+on:
+  push:
+    paths:
+      - README.md
+      - SPONSORED_PARTNERS.md
+      - 00-featured-apis/README.md
+      - 00-coreclaw-scraper-apis/README.md
+      - settings/generate_readme_clean.js
+      - settings/validate_partner_collections.js
+      - .github/workflows/validate-partner-collections.yml
+  pull_request:
+    paths:
+      - README.md
+      - SPONSORED_PARTNERS.md
+      - 00-featured-apis/README.md
+      - 00-coreclaw-scraper-apis/README.md
+      - settings/generate_readme_clean.js
+      - settings/validate_partner_collections.js
+      - .github/workflows/validate-partner-collections.yml
+  schedule:
+    - cron: '17 9 1 */3 *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check scripts
+        run: |
+          node --check settings/generate_readme_clean.js
+          node --check settings/validate_partner_collections.js
+
+      - name: Validate collection structure
+        run: node settings/validate_partner_collections.js
+
+      - name: Validate live CoreClaw links
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: node settings/validate_partner_collections.js --check-links

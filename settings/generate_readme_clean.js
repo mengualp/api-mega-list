@@ -108,12 +108,27 @@ for (const actor of actors) {
 
 const sortedCategories = Object.keys(actorsByCategory).sort();
 const totalActors = actors.length - filteredCount;
+const partnerCollections = [
+    {
+        name: 'ApyHub Utility API Collection',
+        path: './00-featured-apis/',
+        count: 200,
+        focus: 'AI, files, data extraction, validation, SEO, HR, marketing, and utilities'
+    },
+    {
+        name: 'CoreClaw Web, Social & Commerce Scraper APIs',
+        path: './00-coreclaw-scraper-apis/',
+        count: 118,
+        focus: 'Social media, e-commerce, search, jobs, maps, leads, and real estate'
+    }
+];
+const partnerListingCount = partnerCollections.reduce((sum, partner) => sum + partner.count, 0);
 
 // Generate README content
 let content = `<div align="center">\n\n`;
 content += `# 🚀 API Mega List\n\n`;
 content += `<img src="https://firebasestorage.googleapis.com/v0/b/facesift.firebasestorage.app/o/user_uploads%2F83EXwNWgaKe1BHmyd9ISw3HCEfi2%2F1765301877738-Generated%20Image%20December%2009%2C%202025%20-%2012_37PM.jpeg?alt=media&token=e2e9e673-ff88-4683-a0b0-9eb3aeeb9559" alt="API Mega List" style="max-width: 100%; height: auto;">\n\n`;
-content += `**The most comprehensive collection of APIs on GitHub** - ${totalActors.toLocaleString()} ready-to-use APIs for building everything from simple automations to full-scale applications.\n\n`;
+content += `**The most comprehensive collection of APIs on GitHub** - ${totalActors.toLocaleString()} core directory APIs plus ${partnerListingCount.toLocaleString()} sponsored partner listings for building everything from simple automations to full-scale applications.\n\n`;
 content += `---\n\n`;
 content += `### 📊 Repository Stats\n\n`;
 content += `<img src="https://img.shields.io/badge/APIs-${totalActors.toLocaleString()}-blue?style=for-the-badge&logo=api" alt="Total APIs">\n`;
@@ -124,12 +139,13 @@ content += `---\n\n`;
 content += `### ⭐ Star This Repository\n\n`;
 content += `**If this API list has helped you, please consider giving it a star! ⭐**\n\n`;
 content += `*Your support helps others discover this valuable resource and keeps me motivated to maintain and update it regularly.*\n\n`;
-content += `<a href="https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/YOUR_USERNAME/YOUR_REPO_NAME?style=for-the-badge&logo=github&color=yellow&label=Stars" alt="GitHub Stars"></a>\n\n`;
+content += `<a href="https://github.com/cporter202/API-mega-list/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/cporter202/API-mega-list?style=for-the-badge&logo=github&color=yellow&label=Stars" alt="GitHub Stars"></a>\n\n`;
 content += `---\n\n`;
-content += `### ☕ Support the Creator\n\n`;
-content += `**If this repo has helped you, consider buying me a coffee! ☕**\n\n`;
-content += `*Your support keeps me creating valuable repos and keeping everything up to date.*\n\n`;
-content += `<a href="https://buymeacoffee.com/viralwavestudio" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>\n\n`;
+content += `### Sponsored: KamdenAI\n\n`;
+content += `**Morning execution signals for traders who want a focused plan before the open.**\n\n`;
+content += `KamdenAI gives members a structured morning workflow: 9:15 AM research, 9:28 AM locked field, 9:30 AM confirmed buys, 10:05 AM results, and Developer API webhooks for sending signal events into your own tools.\n\n`;
+content += `<a href="https://kamdenai.com/" target="_blank"><img src="./assets/kamdenai-promo.png" alt="KamdenAI morning execution signal system" style="max-width: 100%; height: auto; border-radius: 12px;"></a>\n\n`;
+content += `<a href="https://kamdenai.com/" target="_blank"><img src="https://img.shields.io/badge/Visit-KamdenAI.com-00d6a3?style=for-the-badge" alt="Visit KamdenAI.com"></a>\n\n`;
 content += `</div>\n\n`;
 
 content += `---\n\n`;
@@ -139,7 +155,8 @@ content += `<div align="center">\n\n`;
 content += `## 📊 Collection Statistics\n\n`;
 content += `| Metric | Count |\n`;
 content += `|--------|-------|\n`;
-content += `| **Total APIs** | **${totalActors.toLocaleString()}** |\n`;
+content += `| **Core directory APIs** | **${totalActors.toLocaleString()}** |\n`;
+content += `| **Sponsored partner listings** | **${partnerListingCount.toLocaleString()}** |\n`;
 content += `| **Categories** | **${sortedCategories.length}** |\n`;
 content += `| **Last Updated** | ${new Date().toISOString().split('T')[0]} |\n\n`;
 content += `</div>\n\n`;
@@ -165,6 +182,15 @@ content += `---\n\n`;
 
 // Table of Contents - simple list format
 content += `## 📚 Table of Contents\n\n`;
+
+content += `### Featured Partner Collections\n\n`;
+content += `| Sponsored partner collection | Listings | Focus |\n`;
+content += `|-------------------------------|---------:|-------|\n`;
+for (const partner of partnerCollections) {
+    content += `| [${partner.name}](${partner.path}) | **${partner.count.toLocaleString()} APIs** | ${partner.focus} |\n`;
+}
+content += `\n[Sponsored partner placement policy](./SPONSORED_PARTNERS.md)\n\n`;
+content += `### Core API Categories\n\n`;
 
 for (const category of sortedCategories) {
     const count = actorsByCategory[category].length;
@@ -363,10 +389,10 @@ content += `---\n\n`;
 // Usage section
 content += `## 🚀 How to Use\n\n`;
 content += `1. **Browse by Category** - Use the table of contents above to jump to any category\n`;
-content += `2. **Click Any API** - All links include affiliate tracking and take you to the Apify platform\n`;
-content += `3. **View Documentation** - Each API page has full documentation, examples, and pricing\n`;
-content += `4. **Run via API** - All actors can be run programmatically via Apify's API\n`;
-content += `5. **Schedule Runs** - Set up automated schedules for regular data collection\n\n`;
+content += `2. **Click Any API** - Open the API's provider page for its current details\n`;
+content += `3. **View Documentation** - Each provider page includes its available documentation, examples, and pricing\n`;
+content += `4. **Run via API** - Use the provider's API instructions to integrate the selected tool\n`;
+content += `5. **Schedule Runs** - Use supported provider automation features for recurring data collection\n\n`;
 
 content += `---\n\n`;
 
@@ -376,13 +402,14 @@ content += `- ✅ All APIs are sorted alphabetically within their categories\n`;
 content += `- ✅ Descriptions are optimized for readability (truncated to ~150 characters)\n`;
 content += `- ✅ For full descriptions and details, visit the individual API pages\n`;
 content += `- ✅ This list is automatically generated from the Apify Store API\n`;
-content += `- ✅ All links include affiliate tracking (\`?fpr=p2hrc6\`)\n\n`;
+content += `- ✅ Sponsored partner collections are maintained separately from the core directory\n\n`;
 
 content += `---\n\n`;
 
 // Footer
 content += `<div align="center">\n\n`;
-content += `**Total APIs: ${totalActors.toLocaleString()}** | `;
+content += `**Core directory APIs: ${totalActors.toLocaleString()}** | `;
+content += `**Sponsored partner listings: ${partnerListingCount.toLocaleString()}** | `;
 content += `**Categories: ${sortedCategories.length}** | `;
 content += `**Last Updated: ${new Date().toISOString().split('T')[0]}**\n\n`;
 content += `*One of the most valuable API lists on GitHub—period.* 💪\n\n`;
