@@ -1,6 +1,6 @@
 # ApyHub Utility API Collection
 
-<p align="right"><a href="../README.md#-table-of-contents">Back to main list</a></p>
+<p align="right"><a href="../../README.md#sponsored-partner-collections">Back to sponsored partner collections</a></p>
 
 > **Sponsored partner collection**
 

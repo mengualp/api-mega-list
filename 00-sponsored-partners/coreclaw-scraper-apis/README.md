@@ -1,6 +1,6 @@
 # CoreClaw Web, Social & Commerce Scraper APIs
 
-<p align="right"><a href="../README.md#featured-partner-collections">Back to featured partner collections</a></p>
+<p align="right"><a href="../../README.md#sponsored-partner-collections">Back to sponsored partner collections</a></p>
 
 > **Sponsored partner collection**
 
@@ -237,7 +237,7 @@ Explore **118 CoreClaw scraper APIs** for social media, e-commerce, search, jobs
 - Review the public Store catalog quarterly during the sponsored placement term.
 - Validate direct links and remove unavailable listings during each review.
 - Keep titles, descriptions, and category placement aligned with the current public catalog.
-- See the repository's [sponsored partner placement policy](../SPONSORED_PARTNERS.md).
+- See the repository's [sponsored partner placement policy](../../SPONSORED_PARTNERS.md).
 
-<p align="center"><a href="../README.md#featured-partner-collections">Back to featured partner collections</a></p>
+<p align="center"><a href="../../README.md#sponsored-partner-collections">Back to sponsored partner collections</a></p>
 

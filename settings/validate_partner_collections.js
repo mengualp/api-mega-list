@@ -11,8 +11,9 @@ const path = require('path');
 
 const root = path.join(__dirname, '..');
 const mainReadme = fs.readFileSync(path.join(root, 'README.md'), 'utf8');
-const apyhubReadme = fs.readFileSync(path.join(root, '00-featured-apis', 'README.md'), 'utf8');
-const coreclawReadme = fs.readFileSync(path.join(root, '00-coreclaw-scraper-apis', 'README.md'), 'utf8');
+const sponsoredLanding = fs.readFileSync(path.join(root, '00-sponsored-partners', 'README.md'), 'utf8');
+const apyhubReadme = fs.readFileSync(path.join(root, '00-sponsored-partners', 'apyhub-utility-apis', 'README.md'), 'utf8');
+const coreclawReadme = fs.readFileSync(path.join(root, '00-sponsored-partners', 'coreclaw-scraper-apis', 'README.md'), 'utf8');
 const readmeGenerator = fs.readFileSync(path.join(__dirname, 'generate_readme_clean.js'), 'utf8');
 
 const errors = [];
@@ -41,8 +42,10 @@ check(coreclawUrls.every(url => url.endsWith('?fpr=chris69')), 'Every CoreClaw s
 check(categoryCounts.length === 16, `Expected 16 CoreClaw categories, found ${categoryCounts.length}`);
 check(categoryCounts.reduce((sum, count) => sum + count, 0) === 118, 'CoreClaw category counts must add up to 118');
 check(!coreclawReadme.includes('tokens truncated'), 'CoreClaw collection contains a truncation marker');
-check(mainReadme.includes('(./00-featured-apis/)'), 'Main README is missing the ApyHub partner collection');
-check(mainReadme.includes('(./00-coreclaw-scraper-apis/)'), 'Main README is missing the CoreClaw partner collection');
+check(mainReadme.includes('(./00-sponsored-partners/apyhub-utility-apis/)'), 'Main README is missing the ApyHub partner collection');
+check(mainReadme.includes('(./00-sponsored-partners/coreclaw-scraper-apis/)'), 'Main README is missing the CoreClaw partner collection');
+check(sponsoredLanding.includes('(./apyhub-utility-apis/)'), 'Sponsored landing page is missing the ApyHub collection');
+check(sponsoredLanding.includes('(./coreclaw-scraper-apis/)'), 'Sponsored landing page is missing the CoreClaw collection');
 check(mainReadme.indexOf('ApyHub Utility API Collection') < mainReadme.indexOf('CoreClaw Web, Social & Commerce Scraper APIs'), 'Partner collections must remain alphabetically ordered');
 check(mainReadme.includes('(./SPONSORED_PARTNERS.md)'), 'Main README is missing the sponsored placement policy');
 check(!mainReadme.includes('All links include affiliate tracking'), 'Main README contains the removed affiliate-tracking note');

@@ -111,13 +111,13 @@ const totalActors = actors.length - filteredCount;
 const partnerCollections = [
     {
         name: 'ApyHub Utility API Collection',
-        path: './00-featured-apis/',
+        path: './00-sponsored-partners/apyhub-utility-apis/',
         count: 200,
         focus: 'AI, files, data extraction, validation, SEO, HR, marketing, and utilities'
     },
     {
         name: 'CoreClaw Web, Social & Commerce Scraper APIs',
-        path: './00-coreclaw-scraper-apis/',
+        path: './00-sponsored-partners/coreclaw-scraper-apis/',
         count: 118,
         focus: 'Social media, e-commerce, search, jobs, maps, leads, and real estate'
     }
@@ -183,7 +183,7 @@ content += `---\n\n`;
 // Table of Contents - simple list format
 content += `## 📚 Table of Contents\n\n`;
 
-content += `### Featured Partner Collections\n\n`;
+content += `### [Sponsored Partner Collections](./00-sponsored-partners/)\n\n`;
 content += `| Sponsored partner collection | Listings | Focus |\n`;
 content += `|-------------------------------|---------:|-------|\n`;
 for (const partner of partnerCollections) {
