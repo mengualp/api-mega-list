@@ -6,6 +6,8 @@
 
 Explore **118 CoreClaw scraper APIs** for social media, e-commerce, search, jobs, maps, lead generation, real estate, SEO, and structured web data. CoreClaw calls these tools Workers; every listing below is API-addressable and links directly to the appropriate tool page.
 
+<a href="https://www.coreclaw.com/store/categories?fpr=chris69" target="_blank"><img src="../../assets/featured/coreclaw-banner.png" alt="CoreClaw web data APIs and ready-to-use scrapers" width="1200"></a>
+
 <p align="center">
   <a href="https://www.coreclaw.com/store/categories?fpr=chris69"><strong>Browse the CoreClaw scraper catalog</strong></a>
 </p>

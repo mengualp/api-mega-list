@@ -46,6 +46,10 @@ check(mainReadme.includes('(./00-featured-apis/apyhub-utility-apis/)'), 'Main RE
 check(mainReadme.includes('(./00-featured-apis/coreclaw-scraper-apis/)'), 'Main README is missing the CoreClaw collection');
 check(featuredLanding.includes('(./apyhub-utility-apis/)'), 'Featured APIs page is missing the ApyHub collection');
 check(featuredLanding.includes('(./coreclaw-scraper-apis/)'), 'Featured APIs page is missing the CoreClaw collection');
+check(apyhubReadme.includes('../../assets/featured/apyhub-banner.png'), 'ApyHub page is missing its featured banner');
+check(coreclawReadme.includes('../../assets/featured/coreclaw-banner.png'), 'CoreClaw page is missing its featured banner');
+check(fs.existsSync(path.join(root, 'assets', 'featured', 'apyhub-banner.png')), 'ApyHub banner asset is missing');
+check(fs.existsSync(path.join(root, 'assets', 'featured', 'coreclaw-banner.png')), 'CoreClaw banner asset is missing');
 check(mainReadme.indexOf('ApyHub Utility API Collection') < mainReadme.indexOf('CoreClaw Web, Social & Commerce Scraper APIs'), 'Partner collections must remain alphabetically ordered');
 check(mainReadme.includes('(./SPONSORED_PARTNERS.md)'), 'Main README is missing the sponsored placement policy');
 check(!mainReadme.includes('All links include affiliate tracking'), 'Main README contains the removed affiliate-tracking note');

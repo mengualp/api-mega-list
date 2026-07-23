@@ -6,6 +6,8 @@
 
 Explore **200 ApyHub utility APIs** for artificial intelligence, file conversion, data extraction, validation, SEO, HR, marketing, and application workflows.
 
+<a href="https://apyhub.com/" target="_blank"><img src="../../assets/featured/apyhub-banner.png" alt="ApyHub utility API catalog" width="1200"></a>
+
 **200 APIs in this sponsored collection**
 
 ## API Categories
